@@ -1,0 +1,254 @@
+{
+    "3in1semia.zip": {
+        "md5": "014cc1c715408f2021f415d5068d34f1",
+        "size": 859037
+    },
+    "48in1c.zip": {
+        "md5": "2bc1d97f513154d2528f3cb517b04e78",
+        "size": 485686
+    },
+    "aa3010.zip": {
+        "md5": "de3d0ee8f17df1fcea51af747735b306",
+        "size": 219
+    },
+    "aa310.zip": {
+        "md5": "9787ff7e8d1657778d3987ba9a50f4db",
+        "size": 6533092
+    },
+    "aa500.zip": {
+        "md5": "6a728d857a5a1168b5f506780b6b21df",
+        "size": 1786071
+    },
+    "aa500d.zip": {
+        "md5": "82447684a6cf9bc7c4df005b2b988d55",
+        "size": 164798
+    },
+    "aa680.zip": {
+        "md5": "0d25c1f92dfdf05f00dd5115657f0cc9",
+        "size": 160187
+    },
+    "arc_a448.zip": {
+        "md5": "737a5e351e44a742ef8685a6c87ae53a",
+        "size": 607
+    },
+    "arc_a448b.zip": {
+        "md5": "efc589a90b1941df61b12043eb634717",
+        "size": 840
+    },
+    "arc_armadeus.zip": {
+        "md5": "0136dd5b26853e789370f165537003c4",
+        "size": 1020
+    },
+    "arc_bbcio_aga30.zip": {
+        "md5": "df65614361001a21d492f04af6af48b8",
+        "size": 1315
+    },
+    "arc_bbcio_aka10.zip": {
+        "md5": "42cd83fffa70bd7ab0beed9efc989a09",
+        "size": 3819
+    },
+    "arc_bbcio_we.zip": {
+        "md5": "f6a77e53c6a4df2b130059e1abe7368d",
+        "size": 1251
+    },
+    "arc_eaglem2.zip": {
+        "md5": "ce0e379530b24e1a467b8bfd9025b562",
+        "size": 45931
+    },
+    "arc_ether1_aka25.zip": {
+        "md5": "bf76e21aa10b33e0452d6b49c1fa0cd6",
+        "size": 177
+    },
+    "arc_etherd.zip": {
+        "md5": "2a6c1873bedc5044d97205b2f879272a",
+        "size": 104899
+    },
+    "arc_etherr.zip": {
+        "md5": "30efbb473ef017daddb57b316969f128",
+        "size": 47817
+    },
+    "arc_faxpack.zip": {
+        "md5": "0778666302814836f3c566aeb6cfdf35",
+        "size": 5787
+    },
+    "arc_ide_be.zip": {
+        "md5": "4a46fe389483a8949696b4952bd06322",
+        "size": 24250
+    },
+    "arc_ide_rdev.zip": {
+        "md5": "2653e68f07370d71f01b0d7d8f946c2c",
+        "size": 6796
+    },
+    "arc_iomidi_aka15.zip": {
+        "md5": "36582e0af5f6327756a5b5c8d7499d1f",
+        "size": 5249
+    },
+    "arc_lark.zip": {
+        "md5": "ef5fdb02321877c953285a51b27ab25f",
+        "size": 32376
+    },
+    "arc_lbp4.zip": {
+        "md5": "4b4e1e6fbd4d1df00c5c2d23f69cd3e8",
+        "size": 7242
+    },
+    "arc_midi_aka16.zip": {
+        "md5": "ee1327d996f2fc3485e777c2c002a685",
+        "size": 21451
+    },
+    "arc_midimax.zip": {
+        "md5": "7d63a94a89397ce2bdb32fc79e9f015a",
+        "size": 9601
+    },
+    "arc_nexus_a500.zip": {
+        "md5": "17bd83e493bd2bde2fecf1a5ea18fb5b",
+        "size": 15420
+    },
+    "arc_rom_aka05.zip": {
+        "md5": "53f9873681a2dc3e511c13f75e71aad6",
+        "size": 4818
+    },
+    "arc_rs423.zip": {
+        "md5": "ef928e75defa9f50e28b0481868327c8",
+        "size": 295
+    },
+    "arc_scanjunior.zip": {
+        "md5": "11906b2fd516583501f08fe0484011ee",
+        "size": 6211
+    },
+    "arc_scanlight.zip": {
+        "md5": "3081c3eeebab512e716ca31dc5c1b283",
+        "size": 6924
+    },
+    "arc_scanvideo.zip": {
+        "md5": "6d84fca21669f8fb2a9f79a7ad645282",
+        "size": 14403
+    },
+    "arc_scsi_vti.zip": {
+        "md5": "16a89d4b4636dac50c77da61213538d2",
+        "size": 34041
+    },
+    "arc_serial.zip": {
+        "md5": "e3dff19a3205be64f686ad5c8d8c34f9",
+        "size": 2943
+    },
+    "arc_upa_hccs.zip": {
+        "md5": "d583161384c2a750fd87dff768ed50ba",
+        "size": 1159
+    },
+    "arc_upmidi_aka12.zip": {
+        "md5": "aabc0b327b949ceea593efb2b30d5bea",
+        "size": 8863
+    },
+    "avsp.zip": {
+        "md5": "8832a1cdafd6aab89d8c3b0d8740e447",
+        "size": 1511714
+    },
+    "cowboya.zip": {
+        "md5": "2bbca0789090d0c53459452e95ba4ec2",
+        "size": 2882
+    },
+    "ctk2100.zip": {
+        "md5": "6c022e737309ba148b75bb1404848103",
+        "size": 1424146
+    },
+    "dmainevent.zip": {
+        "md5": "2bc32b653434cb2d06e07a8667ed65bd",
+        "size": 1852
+    },
+    "f387x.zip": {
+        "md5": "d06d2e8bcc99913fe3eb0635296bfdbf",
+        "size": 1923
+    },
+    "fnf.zip": {
+        "md5": "84872388eeca661d1fc908ecb6c86255",
+        "size": 172047
+    },
+    "fowling.zip": {
+        "md5": "c3ce7d6884d8421d62c1fbfaaad45e72",
+        "size": 42943
+    },
+    "grudge.zip": {
+        "md5": "79b70895da5c8e34b18f1a336d4b0be2",
+        "size": 12470
+    },
+    "houseball.zip": {
+        "md5": "d98cb00c7af65199710911ee281dd7b9",
+        "size": 2902
+    },
+    "lwriter.zip": {
+        "md5": "b611bf3d6a149d9be7b98dd511671b29",
+        "size": 322128
+    },
+    "lwriterplus.zip": {
+        "md5": "8dac351cbd786d847ca017155f82d944",
+        "size": 752318
+    },
+    "marqueen.zip": {
+        "md5": "6dc3add4bb532308f05c815972f61046",
+        "size": 1347
+    },
+    "mbossy.zip": {
+        "md5": "a5f385a97a3620918e4155aef17afff4",
+        "size": 4969
+    },
+    "mirninjaa.zip": {
+        "md5": "3dabdea055378b13f9b9936c2f01e3aa",
+        "size": 58707
+    },
+    "monkeygk.zip": {
+        "md5": "c268755c3d3e1e39c5564af7faf84829",
+        "size": 44554
+    },
+    "monsterza.zip": {
+        "md5": "88a12de7a475a2c0c7ab2c3d71fa5488",
+        "size": 2394
+    },
+    "mushik2k.zip": {
+        "md5": "b4fadd049dfb19dc792f9fb6bdba0df5",
+        "size": 65352791
+    },
+    "mushikc.zip": {
+        "md5": "26beaeb2192b926366d075aa193a8c89",
+        "size": 29275729
+    },
+    "mvme120.zip": {
+        "md5": "cc2b0c91041a17d07de9f6b89531b9c0",
+        "size": 47505
+    },
+    "osa_sparc.zip": {
+        "md5": "5a95bdf8df10f1d64d1b13d248277d3f",
+        "size": 173501
+    },
+    "popn1.zip": {
+        "md5": "f8b4cecf9f99e006c4df0365a67fcae3",
+        "size": 307579
+    },
+    "positron.zip": {
+        "md5": "d6a6f046646abc44188884ec61d52772",
+        "size": 25381
+    },
+    "rbowlorama.zip": {
+        "md5": "178ec162f3325d6754a309e4a0df2dec",
+        "size": 184888148
+    },
+    "spcpoker.zip": {
+        "md5": "32bb33a3561f19777155f78321022b62",
+        "size": 1632
+    },
+    "ssf2us2.zip": {
+        "md5": "b54316c1471342e3a884277f619b598d",
+        "size": 441180
+    },
+    "stop.zip": {
+        "md5": "48a077d15dd0305e2d94fd9cece021e5",
+        "size": 1382
+    },
+    "tmnt_101.zip": {
+        "md5": "6a04a8e75397aa04598359035eb642d9",
+        "size": 55906
+    },
+    "tr808.zip": {
+        "md5": "020b882234bbf6771d978c38674499fd",
+        "size": 1953
+    }
+}
