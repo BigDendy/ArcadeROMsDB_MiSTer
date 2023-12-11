@@ -138,8 +138,8 @@ def load_hash_db_with_fallback(old_mameversion, hash_dbs_storage, is_hbmame, mra
     if hash_db is None:
         if is_hbmame:
             new_mameversion = '0220'
-        elif to_number(new_mameversion) >= 251:
-            new_mameversion = '0251'
+        elif to_number(new_mameversion) >= 245:
+            new_mameversion = '0245'
         else:
             new_mameversion = '0240'
 
