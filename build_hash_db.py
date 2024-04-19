@@ -7,11 +7,12 @@ import tempfile
 import re
 import os
 import hashlib
-from typing import Any, Dict, List, TypedDict
+from typing import Any, Dict, List, TypedDict, Tuple
 import zlib
 import signal
 import time
 import sys
+from pathlib import Path
 
 _print = print
 def print(text=""):
@@ -68,14 +69,15 @@ def process(source: str, interrupt_handler: InterruptHandler, db_file: str, ones
         print('process_with_downloads')
         return process_with_downloads(source, interrupt_handler, db_file, oneshot)
 
-    if re.fullmatch('([-_a-z0-9.%]+)', source.lower()):
+    if re.fullmatch('([-_a-z0-9.%/\[\]]+)', source.lower()):
         print('process_with_metadata_query')
         return process_with_metadata_query(source, interrupt_handler, db_file, oneshot)
     
     raise Exception('Could not process source %s' % source)
 
 def process_with_metadata_query(source: str, interrupt_handler: InterruptHandler, db_file: str, oneshot: bool) -> None:
-    proc = subprocess.run(curl(["https://archive.org/metadata/%s" % source]), stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
+    source_route, source_dir = split_on_first_slash(source)
+    proc = subprocess.run(curl(["https://archive.org/metadata/%s" % source_route]), stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
     if proc.returncode == 0:
         print('Ok')
     else:
@@ -85,10 +87,17 @@ def process_with_metadata_query(source: str, interrupt_handler: InterruptHandler
     files = load_files(db_file)
 
     for description in json.loads(proc.stdout.decode())["files"]:
-        if description["format"].strip().lower() != "zip":
+        if 'name' not in description:
             continue
 
         rom = description["name"]
+        if description["format"].strip().lower() != "zip":
+            print('Skip: ' + rom)
+            continue
+            
+        if source_dir is not None and not rom.startswith(source_dir):
+            print('Skip: ' + rom)
+            continue
 
         print(rom)
         save_rom_in_files(db_file, not oneshot, files, os.path.basename(rom), {
@@ -137,8 +146,8 @@ def add_rom_to_skip_list(files, rom):
 
 def save_rom_in_files(db_file: str, do_save: bool, files: Dict[str, HashData], rom: str, rom_description: HashData) -> None:
     if rom_description is not None:
-        files[rom] = rom_description
-        if do_save: save_db_file(db_file, files)
+        files[Path(rom).name] = rom_description
+        save_db_file(db_file, files)
 
 def save_db_file(db_file, files):
     with open(db_file, 'wt') as f:
@@ -246,6 +255,13 @@ def md5_calc(file: str) -> str:
             file_hash.update(chunk)
             chunk = f.read(8192)
         return file_hash.hexdigest()
+
+def split_on_first_slash(input_string) -> Tuple[str, None]:
+    split_index = input_string.find('/')
+    if split_index == -1:
+        return input_string, None
+    else:
+        return input_string[:split_index], input_string[split_index+1:]
 
 def crc32_calc(file: str) -> str:
     prev = 0
