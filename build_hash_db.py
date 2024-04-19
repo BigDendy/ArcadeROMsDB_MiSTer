@@ -68,7 +68,7 @@ def process(source: str, interrupt_handler: InterruptHandler, db_file: str) -> N
         print('process_with_downloads')
         return process_with_downloads(source, interrupt_handler, db_file)
 
-    if re.fullmatch('([-_a-z0-9.%]+)', source.lower()):
+    if re.fullmatch('([-_a-z0-9.%/\[\]]+)', source.lower()):
         print('process_with_metadata_query')
         return process_with_metadata_query(source, interrupt_handler, db_file)
     
