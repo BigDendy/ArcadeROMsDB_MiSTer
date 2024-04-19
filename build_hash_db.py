@@ -12,6 +12,7 @@ import zlib
 import signal
 import time
 import sys
+from pathlib import Path
 
 _print = print
 def print(text=""):
@@ -131,7 +132,7 @@ def add_rom_to_skip_list(files, rom):
 
 def save_rom_in_files(db_file: str, files: Dict[str, HashData], rom: str, rom_description: HashData) -> None:
     if rom_description is not None:
-        files[rom] = rom_description
+        files[Path(rom).name] = rom_description
         save_db_file(db_file, files)
 
 def save_db_file(db_file, files):
