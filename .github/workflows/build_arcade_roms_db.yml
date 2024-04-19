@@ -15,6 +15,12 @@ jobs:
     - uses: actions/checkout@v2
     - uses: fregante/setup-git-user@v2
 
+    - name: Fallback hash DB
+      run: ./build_hash_db.sh
+      env:
+        DB_FILE: "mamemergedfallback.json"
+        SOURCE: "mame-merged"
+        ONESHOT: "1"
     - name: Build
       run: python3 build_arcade_roms_db.py
       env:

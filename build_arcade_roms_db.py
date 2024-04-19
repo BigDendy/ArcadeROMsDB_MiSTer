@@ -77,6 +77,7 @@ def main():
 
             hash_db, mameversion = load_hash_db_with_fallback(mameversion, hash_dbs_storage, is_hbmame, mra)
             if zip_name not in hash_db:
+
                 hash_db, mameversion = load_hash_db_with_fallback(None, hash_dbs_storage, is_hbmame, mra)
                 print('INFO: zip_name %s not in hash_db %s -> Fallback instead' % (zip_name, mameversion))
 
@@ -91,12 +92,15 @@ def main():
                 tags.append(tag_by_rbf(tag_dictionary, rbf))
 
             hash_description = hash_db[zip_name]
+            
+             
             files[games_path] = {
                 "hash": hash_description['md5'],
                 "size": hash_description['size'],
-                "url": sources['hbmame' if is_hbmame else 'mame'][mameversion] + zip_name,
+                "url": sources['hbmame' if is_hbmame else 'mame'][mameversion] + (hash_description['fullpath'] if 'fullpath' in hash_description else zip_name),
                 "tags": tags
             }
+
             versions[games_path] = mameversion
 
     db = {
@@ -121,6 +125,7 @@ def main():
         "timestamp":  int(time.time())
     }
 
+    save_json(db, "test.json")
     git_push_branch = os.environ.get('GIT_PUSH_BRANCH', None)
     if git_push_branch is not None:
         try_git_push(db, 'arcade_roms_db.json.zip', git_push_branch, os.environ.get('DB_URL', ''))
@@ -138,10 +143,8 @@ def load_hash_db_with_fallback(old_mameversion, hash_dbs_storage, is_hbmame, mra
     if hash_db is None:
         if is_hbmame:
             new_mameversion = '0220'
-        elif to_number(new_mameversion) >= 245:
-            new_mameversion = '0245'
-        else:
-            new_mameversion = '0240'
+        else: 
+            new_mameversion = 'fallback'
 
         if mra is not None:
             print('WARNING! mameversion "%s" missing for mra %s, falling back to %s.' % (str(old_mameversion), mra, new_mameversion))
@@ -163,6 +166,7 @@ def load_hash_db_from_mameversion(mameversion, hash_dbs_storage, is_hbmame):
     return hash_dbs_storage[db_path]
 
 def load_json_from_path(db_path):
+    print(f"JSON LOAD {db_path}")
     if not Path(db_path).is_file():
         return None
 

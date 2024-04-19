@@ -51,6 +51,7 @@ def main() -> None:
 
     source = os.environ['SOURCE'].strip()
     db_file = os.environ['DB_FILE'].strip()
+    oneshot = "ONESHOT" in os.environ
     timeout = int(os.environ.get('TIMEOUT_MINUTES', '-1').strip()) * 60
     if timeout >= 0:
         timeout += int(time.time())
@@ -59,22 +60,22 @@ def main() -> None:
     print('db_file: %s' % db_file)
     print('timeout: %d' % timeout)
 
-    process(source, InterruptHandler(timeout), db_file)
+    process(source, InterruptHandler(timeout), db_file, oneshot)
 
     print('Done.')
 
-def process(source: str, interrupt_handler: InterruptHandler, db_file: str) -> None:
+def process(source: str, interrupt_handler: InterruptHandler, db_file: str, oneshot: bool) -> None:
     if re.fullmatch('https://archive[.]org/download/([-_a-z0-9.%]+)/([-_a-z0-9.%]+)[.]zip/', source.lower()):
         print('process_with_downloads')
-        return process_with_downloads(source, interrupt_handler, db_file)
+        return process_with_downloads(source, interrupt_handler, db_file, oneshot)
 
     if re.fullmatch('([-_a-z0-9.%/\[\]]+)', source.lower()):
         print('process_with_metadata_query')
-        return process_with_metadata_query(source, interrupt_handler, db_file)
+        return process_with_metadata_query(source, interrupt_handler, db_file, oneshot)
     
     raise Exception('Could not process source %s' % source)
 
-def process_with_metadata_query(source: str, interrupt_handler: InterruptHandler, db_file: str) -> None:
+def process_with_metadata_query(source: str, interrupt_handler: InterruptHandler, db_file: str, oneshot: bool) -> None:
     source_route, source_dir = split_on_first_slash(source)
     proc = subprocess.run(curl(["https://archive.org/metadata/%s" % source_route]), stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
     if proc.returncode == 0:
@@ -99,15 +100,19 @@ def process_with_metadata_query(source: str, interrupt_handler: InterruptHandler
             continue
 
         print(rom)
-        save_rom_in_files(db_file, files, rom, {
+        save_rom_in_files(db_file, not oneshot, files, os.path.basename(rom), {
             "md5": description["md5"].strip(),
-            "size": int(description["size"].strip())
+            "size": int(description["size"].strip()),
+            "fullpath": rom
         })
 
-        if interrupt_handler.should_end():
-            return
 
-def process_with_downloads(source: str, interrupt_handler: InterruptHandler, db_file: str) -> None:
+        if interrupt_handler.should_end():
+            if oneshot: save_db_file(db_file, files)
+            return
+    if oneshot: save_db_file(db_file, files)
+
+def process_with_downloads(source: str, interrupt_handler: InterruptHandler, db_file: str, oneshot: bool) -> None:
     roms = query_roms(source)
     files = load_files(db_file)
     verbose = os.environ.get('VERBOSE', 'false') == 'true'
@@ -125,7 +130,7 @@ def process_with_downloads(source: str, interrupt_handler: InterruptHandler, db_
                 continue
 
             rom_description = try_work_on_rom_a_few_times(rom, source, temp, rom_size, interrupt_handler, verbose)
-            save_rom_in_files(db_file, files, rom, rom_description)
+            save_rom_in_files(db_file, not oneshot, files, rom, rom_description)
 
             if interrupt_handler.should_end():
                 return
@@ -139,7 +144,7 @@ def add_rom_to_skip_list(files, rom):
         files['0000_skip_list'] = []
     files['0000_skip_list'].append(rom)
 
-def save_rom_in_files(db_file: str, files: Dict[str, HashData], rom: str, rom_description: HashData) -> None:
+def save_rom_in_files(db_file: str, do_save: bool, files: Dict[str, HashData], rom: str, rom_description: HashData) -> None:
     if rom_description is not None:
         files[Path(rom).name] = rom_description
         save_db_file(db_file, files)
