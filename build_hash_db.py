@@ -86,11 +86,18 @@ def process_with_metadata_query(source: str, interrupt_handler: InterruptHandler
     files = load_files(db_file)
 
     for description in json.loads(proc.stdout.decode())["files"]:
-        print(description)
-        if description["format"].strip().lower() != "zip":
+        if 'name' not in description:
             continue
 
         rom = description["name"]
+        if description["format"].strip().lower() != "zip":
+            print('Skip: ' + rom)
+            continue
+            
+        if source_dir is not None and not rom.startswith(source_dir):
+            print('Skip: ' + rom)
+            continue
+
         print(rom)
         save_rom_in_files(db_file, files, rom, {
             "md5": description["md5"].strip(),
