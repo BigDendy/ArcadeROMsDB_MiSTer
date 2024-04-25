@@ -6071,8 +6071,8 @@
     },
     "bishjan.zip": {
         "fullpath": "mame-merged/bishjan.zip",
-        "md5": "98114be99cb7ff7116e5b88f87e589f6",
-        "size": 2794888
+        "md5": "34f0bc117f8c4d698c0e9017edfc80d3",
+        "size": 5299333
     },
     "bit90.zip": {
         "fullpath": "mame-merged/bit90.zip",
@@ -6093,6 +6093,11 @@
         "fullpath": "mame-merged/bittboy.zip",
         "md5": "a2040b047b41f2a038b37bd2bbd261d2",
         "size": 16057848
+    },
+    "bj92.zip": {
+        "fullpath": "mame-merged/bj92.zip",
+        "md5": "3f957b2ce18c2a4a4300c41395dae056",
+        "size": 96829
     },
     "bjourney.zip": {
         "fullpath": "mame-merged/bjourney.zip",
@@ -6836,8 +6841,8 @@
     },
     "bongo.zip": {
         "fullpath": "mame-merged/bongo.zip",
-        "md5": "2dca8261a51d6ba5c76845375ac69aa1",
-        "size": 18338
+        "md5": "68b763b1fabb30cacc6c6f3f1ff22274",
+        "size": 23361
     },
     "bonkadv.zip": {
         "fullpath": "mame-merged/bonkadv.zip",
@@ -9251,8 +9256,8 @@
     },
     "chessac.zip": {
         "fullpath": "mame-merged/chessac.zip",
-        "md5": "55c9221379da3484770263d2c8edd531",
-        "size": 3419874
+        "md5": "df94f6af86ab1de25670d1dae4dfd75e",
+        "size": 8870572
     },
     "chessc2.zip": {
         "fullpath": "mame-merged/chessc2.zip",
@@ -10496,13 +10501,18 @@
     },
     "comg5107.zip": {
         "fullpath": "mame-merged/comg5107.zip",
-        "md5": "9ae7b3a86c1cf028e0dafa306ac3d4fc",
-        "size": 26641
+        "md5": "1153de6cb597f7bdcbddf249e654b15f",
+        "size": 26691
     },
     "comg5108.zip": {
         "fullpath": "mame-merged/comg5108.zip",
-        "md5": "25a4ea065e04f76f6f1d107b1b67503b",
-        "size": 27046
+        "md5": "4919d809858fa006c1a39591742db501",
+        "size": 27479
+    },
+    "comg6004.zip": {
+        "fullpath": "mame-merged/comg6004.zip",
+        "md5": "1b49b8f0d78629a078cd7b576187c4f9",
+        "size": 26615
     },
     "comg903d.zip": {
         "fullpath": "mame-merged/comg903d.zip",
@@ -12388,6 +12398,11 @@
         "fullpath": "mame-merged/dauphin.zip",
         "md5": "9adb0fe5a5657bc31bf0b22b8ffede31",
         "size": 623
+    },
+    "dawg.zip": {
+        "fullpath": "mame-merged/dawg.zip",
+        "md5": "9b8dc5436c766e2dc7a14ab97425cdcc",
+        "size": 205315
     },
     "dayto2pe.zip": {
         "fullpath": "mame-merged/dayto2pe.zip",
@@ -14416,8 +14431,8 @@
     },
     "dribling.zip": {
         "fullpath": "mame-merged/dribling.zip",
-        "md5": "17f26a6a603bc312195e5117ca98c5ae",
-        "size": 38837
+        "md5": "0a3840e5ad18c45417341b65d3f901cd",
+        "size": 38849
     },
     "drifto94.zip": {
         "fullpath": "mame-merged/drifto94.zip",
@@ -17041,8 +17056,8 @@
     },
     "eto.zip": {
         "fullpath": "mame-merged/eto.zip",
-        "md5": "cf02ff2c3ce3849bcb978039753fef24",
-        "size": 618429
+        "md5": "f7af1914377a79453d95de6826819c5d",
+        "size": 717372
     },
     "eturtles.zip": {
         "fullpath": "mame-merged/eturtles.zip",
@@ -17224,10 +17239,20 @@
         "md5": "a67f744f9014cc1fbe70e70c93492246",
         "size": 208129
     },
+    "exe10102.zip": {
+        "fullpath": "mame-merged/exe10102.zip",
+        "md5": "622517d2a02b2f620b55ecb0d11e5777",
+        "size": 15327
+    },
     "exechess.zip": {
         "fullpath": "mame-merged/exechess.zip",
         "md5": "0ba2bb39068fd55f8204d73eb0aedcab",
         "size": 70008
+    },
+    "executive10_102_kbd.zip": {
+        "fullpath": "mame-merged/executive10_102_kbd.zip",
+        "md5": "593918d7c14a8bf1e2d9f9424480d2e9",
+        "size": 1778
     },
     "exedexes.zip": {
         "fullpath": "mame-merged/exedexes.zip",
@@ -19411,8 +19436,8 @@
     },
     "galgame4.zip": {
         "fullpath": "mame-merged/galgame4.zip",
-        "md5": "2dc40ac96aed8da991102441bd280025",
-        "size": 2264910
+        "md5": "0cc76080c2a76ca117f5cb62d0821af0",
+        "size": 4532614
     },
     "galgbios.zip": {
         "fullpath": "mame-merged/galgbios.zip",
@@ -19946,8 +19971,8 @@
     },
     "gekisha.zip": {
         "fullpath": "mame-merged/gekisha.zip",
-        "md5": "53a0cf91e564e40872a71918b938a13e",
-        "size": 263942
+        "md5": "d0373d52fd4e53282404513357a2449a",
+        "size": 324677
     },
     "gekisou.zip": {
         "fullpath": "mame-merged/gekisou.zip",
@@ -20461,8 +20486,8 @@
     },
     "gladiador.zip": {
         "fullpath": "mame-merged/gladiador.zip",
-        "md5": "a63563ab8c5ad260e631c0dc10338bdf",
-        "size": 1217815
+        "md5": "96c120073878586eecb1e6e9b9e06ebb",
+        "size": 1218534
     },
     "gladiatp.zip": {
         "fullpath": "mame-merged/gladiatp.zip",
@@ -21131,8 +21156,8 @@
     },
     "gorf.zip": {
         "fullpath": "mame-merged/gorf.zip",
-        "md5": "310701110f92fc1aff8e6637535e09e3",
-        "size": 51489
+        "md5": "8ed5d6e042f145f6ebc581a567b47210",
+        "size": 63401
     },
     "gork.zip": {
         "fullpath": "mame-merged/gork.zip",
